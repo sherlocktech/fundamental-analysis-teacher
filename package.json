@@ -1,0 +1,30 @@
+{
+  "name": "fundamental-analysis-teacher",
+  "version": "0.1.0",
+  "description": "Web application that teaches the user how to perform a fundamental analysis on a corporation's stock.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherlocktech/fundamental-analysis-teacher.git"
+  },
+  "keywords": [
+    "finance",
+    "fundamental analysis",
+    "stock",
+    "stocks",
+    "economics"
+  ],
+  "author": "Sean Stamm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sherlocktech/fundamental-analysis-teacher/issues"
+  },
+  "homepage": "https://github.com/sherlocktech/fundamental-analysis-teacher",
+  "dependencies": {
+    "express4": "0.0.1",
+    "sql": "^0.58.0"
+  }
+}
