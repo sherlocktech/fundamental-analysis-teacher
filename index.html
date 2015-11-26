@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta charset="utf-8"/>
 		<title>Fundamental Analysis</title>
 
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -9,7 +10,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
-	<body class="container-fluid">
+	<body>
 		<header>
 			<h1>Fundamental Analysis Teacher</h1>
 
@@ -17,15 +18,17 @@
 		</header>
 
 		<main>
-			<div class="bonds">
-				<p>Let's start with the bonds.</p>
-					<div class="basics">
-						<p>Bonds mature in a certain amount of time at which point the face value is paid to the holder of the bond. Coupon payments, if there are any, are also paid periodically to the holder.</p>
-						<p>Bonds are generally purchased for less than face value. The money gained from a bond sale today is more valuable to the seller than what the seller has agreed to pay at maturity.</p>
-						<p>The same time value of money principle is true for the buyer of the bond and that is exactly why we need to determine the required rate of return.</p>
+			<!-- Stock Symbol input -->
+			<form class="submitForm">
+				<div class="form-group">
+					<label for="tickerSymbol">Stock Symbol</label>
+					<input type="text" class="form-control" id="tickerSymbol" placeholder="For Apple Inc. type AAPL">
 				</div>
-			</div>
+				<button type="submit" class="btn btn-default">Analyze!</button>
+			</form>
 		</main>
+
+
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
