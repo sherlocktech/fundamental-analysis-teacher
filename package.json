@@ -25,10 +25,7 @@
   "homepage": "https://github.com/sherlocktech/fundamental-analysis-teacher",
   "dependencies": {
     "express": "^4.13.3",
-    "express3": "0.0.0",
-    "express4": "0.0.1",
     "https": "^1.0.0",
-    "mysql": "^2.9.0",
-    "yql-node": "^0.1.5"
+    "mysql": "^2.9.0"
   }
 }
