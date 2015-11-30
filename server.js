@@ -26,7 +26,7 @@
         "ratios" : [
             { "ratio" : "Current Ratio", "value" : null, "definition" : "current assets / current liabilities", "description" : "The higher the ratio, the greater the likelihood the company will be able to pay its bills. The value of this ratio should be greater than 1; many analysts consider values under 2 reason for concern."},
             { "ratio" : "Quick Ratio", "value" : null, "definition" : "quick assets / current liabilities", "description" : "The higher the ratio the better (though the quick ratio will always be lower than the current ratio)."}/*,
-            { "ratio" : "Asset Turnover", "value" : null, "definition" : "net sales / average total assets", "description" : "Typical values vary by industry, ranging from about 1 in industries whose production is capital intensive (e.g., steel and autos) to over 10 in some types of retailing"},
+            { "ratio" : "Asset Turnover", "value" : null, "definition" : "net sales / average total assets", "description" : "Typical values vary by industry, ranging from about 1 in industries whose production is capital intensive (e.g., steel and autos) to over 10 in some types of retailing."},
             { "ratio" : "Inventory Turnover", "value" : null, "definition" : "cost of goods sold / average inventory", "description" : "TA higher ratio suggests that, on average, its goods are moving quickly; a lower ratio suggests that the firm may be saddled with obsolete inventory or is having trouble selling its product. While higher values are generally consistent with greater efficiency, they can result from having too little inventory to support the company’s current sales volume, which could lead to shortages, back orders and lost sales."}*/
         ]
     };
@@ -155,7 +155,8 @@
         console.log('SERVER RESPONSE: ' + JSON.stringify(serverResponse));
     }
 
-	app.get('/getData', function (req, res) {
-		res.send(serverResponse);
+	app.get('/data', function (req, res) {
+		//res.send(serverResponse);
+        res.sendFile(__dirname + '/data.html');
 	});
 } ());

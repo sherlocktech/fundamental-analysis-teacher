@@ -18,14 +18,20 @@
 		</header>
 
 		<main>
-			<!-- Stock Symbol input -->
-			<form class="submitForm">
-				<div class="form-group">
-					<label for="tickerSymbol">Stock Symbol</label>
-					<input type="text" class="form-control" id="tickerSymbol" placeholder="For Apple Inc. type AAPL">
-				</div>
-				<button type="submit" class="btn btn-default">Analyze!</button>
-			</form>
+            <!-- Stock Symbol input -->
+            <div class="container-fluid">
+                <div class="form-group">
+                    <form class="submitForm">
+
+                        <label for="tickerSymbol">Stock Symbol</label>
+                        <input type="text" class="form-control" id="tickerSymbol" placeholder="For Apple Inc. type AAPL">
+                        <a href="/data.html" class="btn btn-info" role="button">Analyze!</a>
+                    </form>
+                </div>
+                <div id="table-gen">
+
+                </div>
+            </div>
 		</main>
 
 
