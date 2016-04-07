@@ -3,7 +3,7 @@
     company, a string representing the stock ticker of the company, and the
     current time given as date, a date object.
 */
-var buildStockHistoryChart = function( company, currentTime ) {
+var buildStockHistoryChart = function( company ) {
   //potential dataset that will include price history
   var datasetCode = 'WIKI/' + company + '/';
 
@@ -28,8 +28,8 @@ var buildStockHistoryChart = function( company, currentTime ) {
     }
     else {
       //compute startDate string for query
-      var startDate = currentTime;
-      startDate.setMonth(currentTime.getMonth() - 1);
+      var startDate = new Date();
+      startDate.setMonth(startDate.getMonth() - 1);
       var startDateString = startDate.toISOString().substring(0,10);
       //price history query from the month before now | without API key
       var query = 'https://www.quandl.com/api/v3/datasets/'
