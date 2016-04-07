@@ -1,3 +1,8 @@
+/*
+    Builds stock history c3 chart based on what company was searched given as
+    company, a string representing the stock ticker of the company, and the
+    current time given as date, a date object.
+*/
 var buildStockHistoryChart = function( company ) {
   //potential dataset that will include price history
   var datasetCode = 'WIKI/' + company + '/';
@@ -22,11 +27,14 @@ var buildStockHistoryChart = function( company ) {
       alert('Cannot find company...');
     }
     else {
-      //price history query for the month of May in 2015 | without API key
+      //compute startDate string for query
+      var startDate = new Date();
+      startDate.setMonth(startDate.getMonth() - 1);
+      var startDateString = startDate.toISOString().substring(0,10);
+      //price history query from the month before now | without API key
       var query = 'https://www.quandl.com/api/v3/datasets/'
-        + datasetCode
-        +  'data.json?order=asc&start_date=2015-05-01&end_date=2015-05-31';
-      
+        + datasetCode +  'data.json?order=asc&start_date=' + startDateString;
+
       //get request from query, result is stored into simplified arrays
       //date and price data arrays
       var date = ['date'];

@@ -4,6 +4,7 @@ var main = function(){
   $('#search .btn').click( function() {
     var query = $( '#company-search' ).val();
     buildStockHistoryChart( query );
+    //fillFundamentalsTable( query );
   });
 };
 
