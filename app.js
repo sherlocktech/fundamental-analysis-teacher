@@ -3,8 +3,11 @@ var main = function(){
   //when button is clicked build the stock price history chart
   $('#search .btn').click( function() {
     var query = $( '#company-search' ).val();
-    buildStockHistoryChart( query );
-    //fillFundamentalsTable( query );
+    var companyInfo = getQuandlInfo(query);
+    buildStockHistoryChart(companyInfo.timeseries);
+    buildPrice(companyInfo.price);
+    //buildFundamentalsTable(companyInfo.fundamentals);
+    console.log(companyInfo);
   });
 };
 
