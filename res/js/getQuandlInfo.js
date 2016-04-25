@@ -46,14 +46,20 @@ var getQuandlInfo = function(company) {
           timeseries.price.push(subarray[4]);
         });
         //on last element in data build price object
-        price.date = result.dataset_data.data[result.dataset_data.data.length - 1][0];
-        price.open = result.dataset_data.data[result.dataset_data.data.length - 1][8];
-        price.high = result.dataset_data.data[result.dataset_data.data.length - 1][9];
-        price.low = result.dataset_data.data[result.dataset_data.data.length - 1][10];
-        price.close = result.dataset_data.data[result.dataset_data.data.length - 1][11];
+        var mostRecentDataIndex = result.dataset_data.data.length - 1;
+        price.date = result.dataset_data.data[mostRecentDataIndex][0];
+        price.open = result.dataset_data.data[mostRecentDataIndex][8];
+        price.high = result.dataset_data.data[mostRecentDataIndex][9];
+        price.low = result.dataset_data.data[mostRecentDataIndex][10];
+        price.close = result.dataset_data.data[mostRecentDataIndex][11];
+      });
+      stockReq.done(function() {
+        buildStockHistoryChart(companyInfo.timeseries);
+        buildPrice(companyInfo.price);
+        //buildFundamentalsTable(companyInfo.fundamentals);
       });
     }
-  })
+  });
   //object constructors to be inserted into companyInfo
   //object contains adjusted prices
   function Price() {

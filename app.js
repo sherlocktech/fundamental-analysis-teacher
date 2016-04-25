@@ -4,9 +4,6 @@ var main = function(){
   $('#search .btn').click( function() {
     var query = $( '#company-search' ).val();
     var companyInfo = getQuandlInfo(query);
-    buildStockHistoryChart(companyInfo.timeseries);
-    buildPrice(companyInfo.price);
-    //buildFundamentalsTable(companyInfo.fundamentals);
     console.log(companyInfo);
   });
 };
