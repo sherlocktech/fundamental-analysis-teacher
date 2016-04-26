@@ -1,4 +1,4 @@
-var getQuandlInfo = function(company) {
+var build = function(company) {
   //object to return
   var timeseries = new Timeseries();
   var price = new Price();
