@@ -1,0 +1,3 @@
+var buildFundamentalsTable = function (fundamentals) {
+  
+}
