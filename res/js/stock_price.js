@@ -1,1 +1,9 @@
-$('#stock_price').append('<p>105.19</p>');
+var buildPrice = function(priceObj) {
+  $('#stock_price').html(
+    '<ul class="bulletlessList">' +
+      '<li>Open: ' + priceObj.open + '</li>' +
+      '<li>High: ' + priceObj.high + '</li>' +
+      '<li>Low: ' + priceObj.low + '</li>' +
+      '<li>Close: ' + priceObj.close + '</li>' +
+    '</ul>');
+}
