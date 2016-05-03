@@ -1,4 +1,4 @@
-var build = function(company) {
+var buildDashboard = function(company) {
   //object to return
   var timeseries = new Timeseries();
   var price = new Price();
