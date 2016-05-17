@@ -8,7 +8,7 @@ var buildStockHistoryChart = function( timeseries ) {
   var price = timeseries.price;
 
   var chart = c3.generate({
-      bindto: '#stock_history',
+      bindto: '#stock_history div',
       data: {
         x: 'date',
         columns: [

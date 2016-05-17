@@ -9,22 +9,24 @@
 
     <title>FAT - Fundamental Analysis Teacher</title>
 
+    <!-- **********CSS links********** -->
     <!-- Bootstrap -->
     <link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components\bootstrap\dist\css\bootstrap-theme.min.css" rel="stylesheet">
     <!-- c3 -->
     <link href="bower_components/c3/c3.css" rel="stylesheet" type="text/css">
-    <!-- style -->
+    <!-- My Stylesheet -->
     <link href="res\css\style.css" rel="stylesheet">
   </head>
 
   <body>
-    <div class="vertically-center">
+    <div class="vertically-center" id="screen">
       <div class="container center-align-text">
 
-        <div class="row" id="welcome">
+        <div class="row collapse in" id="welcome">
           <h1>Welcome to FAT</h1>
-          <p>Fundamental Analysis Teacher will help you learn the basics of finding
-          the true value of a company's stock.</p>
+          <p>Fundamental Analysis Teacher will help you learn the
+            basics of finding the true value of a company's stock.</p>
         </div>
 
         <div class="row" id="search">
@@ -42,28 +44,18 @@
       </div>
     </div>
 
-    <!-- START SCRIPT SOURCE FILES -->
+    <!-- **********Scripts********** -->
     <!-- jQuery -->
     <script src="bower_components\jquery\dist\jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!-- If CDN unavailable (offline) add source files below -->
-    <!-- Offline Scripts -->
-    <!-- Load d3.js and c3.js -->
+    <!-- Bootstrap -->
+    <script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+    <!-- d3 & c3 -->
     <script src="bower_components\d3\d3.min.js" charset="utf-8"></script>
     <script src="bower_components\c3\c3.min.js"></script>
-    <!-- stock_history.js -->
+    <!-- My Scripts -->
     <script src="res\js\stock_history.js"></script>
     <script src="res\js\stock_price.js"></script>
     <script src="res/js/buildDashboard.js"></script>
     <script src="app.js"></script>
-    <!-- END SOURCE FILES -->
   </body>
 </html>

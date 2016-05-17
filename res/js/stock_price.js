@@ -1,5 +1,5 @@
 var buildPrice = function(priceObj) {
-  $('#stock_price').html(
+  $('#stock_price div').html(
     '<ul class="bulletlessList">' +
       '<li>Open: ' + priceObj.open + '</li>' +
       '<li>High: ' + priceObj.high + '</li>' +
