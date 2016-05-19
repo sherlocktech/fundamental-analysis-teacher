@@ -1,14 +1,14 @@
 /*
-    Builds stock history c3 chart based on what company was searched given as
-    company, a string representing the stock ticker of the company, and the
-    current time given as date, a date object.
+    Builds stock history section of Dashboard based on given timeseries object
+    with date and price properties.
 */
 var buildStockHistoryChart = function( timeseries ) {
+  $('#results').append('<div class="col-md-4 stock_history"><h3>Stock History</h3><div></div></div>');
   var date  = timeseries.date;
   var price = timeseries.price;
 
   var chart = c3.generate({
-      bindto: '#stock_history div',
+      bindto: '#results .stock_history div',
       data: {
         x: 'date',
         columns: [
@@ -24,4 +24,5 @@ var buildStockHistoryChart = function( timeseries ) {
         y:'Closing Price'
       }
   });
+  return $('#results stock_history');
 };

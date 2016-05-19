@@ -1,4 +1,13 @@
 var buildDashboard = function(company) {
+  //hide welcome description
+  $('#welcome').collapse('hide');
+  //move search bar to top and add results div
+  $('#welcome').on('hidden.bs.collapse', function() {
+    $('#search label').text('');
+    $('#screen').removeClass('vertically-center');
+    $('#search').after('<div class="row top-buffer" id="results"></div>');
+  });
+
   //object to return
   var timeseries = new Timeseries();
   var price = new Price();
@@ -23,7 +32,6 @@ var buildDashboard = function(company) {
     }
   });
   //once request completes check to see if searchSuccessful
-  //if !searchSuccessful alert to user
   searchReq.done(function() {
     if(!searchSuccessful) {
       alert('Cannot find company...');
@@ -54,9 +62,7 @@ var buildDashboard = function(company) {
         price.close = result.dataset_data.data[mostRecentDataIndex][11];
       });
       stockReq.done(function() {
-        buildStockHistoryChart(companyInfo.timeseries);
-        buildPrice(companyInfo.price);
-        //buildFundamentalsTable(companyInfo.fundamentals);
+        buildStockHistoryChart(companyInfo.timeseries).buildPrice(companyInfo.price).buildFundamentalsTable(companyInfo.fundamentals);
       });
     }
   });
