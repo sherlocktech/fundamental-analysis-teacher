@@ -1,12 +1,10 @@
-//define app
 var main = function(){
-  //when button is clicked build the stock price history chart
+  //when "Go!" button is clicked build the Dashboard
   $('#search .btn').click( function() {
     var query = $( '#company-search' ).val();
-    var companyInfo = build(query);
-    console.log(companyInfo);
+    console.log(query); //debug purposes
+    var companyInfo = buildDashboard(query);
+    console.log(companyInfo); //debug purposes
   });
 };
-
-//run app
 main();

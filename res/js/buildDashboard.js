@@ -1,4 +1,5 @@
-var build = function(company) {
+var buildDashboard = function(company) {
+  setupDashboard();
   //object to return
   var timeseries = new Timeseries();
   var price = new Price();
@@ -23,7 +24,6 @@ var build = function(company) {
     }
   });
   //once request completes check to see if searchSuccessful
-  //if !searchSuccessful alert to user
   searchReq.done(function() {
     if(!searchSuccessful) {
       alert('Cannot find company...');
@@ -56,7 +56,7 @@ var build = function(company) {
       stockReq.done(function() {
         buildStockHistoryChart(companyInfo.timeseries);
         buildPrice(companyInfo.price);
-        //buildFundamentalsTable(companyInfo.fundamentals);
+        buildFundamentalsTable(companyInfo.fundamentals);
       });
     }
   });
@@ -84,4 +84,19 @@ var build = function(company) {
     this.fundamentals = fundamentals;
   }
   return companyInfo;
+}
+
+function setupDashboard() {
+  //hide welcome description
+  $('#welcome').collapse('hide');
+  //move search bar to top and add results div
+  $('#welcome').on('hidden.bs.collapse', function() {
+    $('#search label').text('');
+    $('#screen').removeClass('vertically-center');
+    $('#search').after('<div class="row top-buffer" id="results">' +
+      '<div class="col-md-4 stock_history"><h3>Stock History</h3><div></div></div>' +
+      '<div class="col-md-4 stock_price"><h3>Stock Price</h3><div></div></div>' +
+      '<div class="col-md-4 stock_fundamentals"><h3>Company Fundamentals</h3><div></div></div>' +
+    '</div>');
+  });
 }

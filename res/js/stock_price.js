@@ -1,5 +1,8 @@
+/*
+    Builds stock price section of Dashboard based on given price object.
+*/
 var buildPrice = function(priceObj) {
-  $('#stock_price').html(
+  $('#results .stock_price div').html(
     '<ul class="bulletlessList">' +
       '<li>Open: ' + priceObj.open + '</li>' +
       '<li>High: ' + priceObj.high + '</li>' +
