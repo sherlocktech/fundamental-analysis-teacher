@@ -1,13 +1,5 @@
 var buildDashboard = function(company) {
-  //hide welcome description
-  $('#welcome').collapse('hide');
-  //move search bar to top and add results div
-  $('#welcome').on('hidden.bs.collapse', function() {
-    $('#search label').text('');
-    $('#screen').removeClass('vertically-center');
-    $('#search').after('<div class="row top-buffer" id="results"></div>');
-  });
-
+  setupDashboard();
   //object to return
   var timeseries = new Timeseries();
   var price = new Price();
@@ -62,7 +54,9 @@ var buildDashboard = function(company) {
         price.close = result.dataset_data.data[mostRecentDataIndex][11];
       });
       stockReq.done(function() {
-        buildStockHistoryChart(companyInfo.timeseries).buildPrice(companyInfo.price).buildFundamentalsTable(companyInfo.fundamentals);
+        buildStockHistoryChart(companyInfo.timeseries);
+        buildPrice(companyInfo.price);
+        buildFundamentalsTable(companyInfo.fundamentals);
       });
     }
   });
@@ -90,4 +84,19 @@ var buildDashboard = function(company) {
     this.fundamentals = fundamentals;
   }
   return companyInfo;
+}
+
+function setupDashboard() {
+  //hide welcome description
+  $('#welcome').collapse('hide');
+  //move search bar to top and add results div
+  $('#welcome').on('hidden.bs.collapse', function() {
+    $('#search label').text('');
+    $('#screen').removeClass('vertically-center');
+    $('#search').after('<div class="row top-buffer" id="results">' +
+      '<div class="col-md-4 stock_history"><h3>Stock History</h3><div></div></div>' +
+      '<div class="col-md-4 stock_price"><h3>Stock Price</h3><div></div></div>' +
+      '<div class="col-md-4 stock_fundamentals"><h3>Company Fundamentals</h3><div></div></div>' +
+    '</div>');
+  });
 }

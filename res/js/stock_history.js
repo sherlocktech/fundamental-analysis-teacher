@@ -3,7 +3,6 @@
     with date and price properties.
 */
 var buildStockHistoryChart = function( timeseries ) {
-  $('#results').append('<div class="col-md-4 stock_history"><h3>Stock History</h3><div></div></div>');
   var date  = timeseries.date;
   var price = timeseries.price;
 
@@ -24,5 +23,4 @@ var buildStockHistoryChart = function( timeseries ) {
         y:'Closing Price'
       }
   });
-  return $('#results stock_history');
 };
