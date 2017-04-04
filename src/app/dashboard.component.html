@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<p>
+  Fundamental Analysis Teacher will help you learn the basics of finding the true value of a company's stock.
+</p>
+<div>
+  <label>Search for a company to get started</label>
+  <input [(ngModel)]="company.name" placeholder="Ex: AAPL for Apple, Inc."/>
+  <button (click)="search(company)">Go!</button>
+</div>
