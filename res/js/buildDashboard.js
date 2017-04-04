@@ -93,10 +93,7 @@ function setupDashboard() {
   $('#welcome').on('hidden.bs.collapse', function() {
     $('#search label').text('');
     $('#screen').removeClass('vertically-center');
-    $('#search').after('<div class="row top-buffer" id="results">' +
-      '<div class="col-md-4 stock_history"><h3>Stock History</h3><div></div></div>' +
-      '<div class="col-md-4 stock_price"><h3>Stock Price</h3><div></div></div>' +
-      '<div class="col-md-4 stock_fundamentals"><h3>Company Fundamentals</h3><div></div></div>' +
-    '</div>');
+    $('#search').after('<div id="results-container"></div>');
+    $('#results-container').load('..\res\html\dashboard.html #results');
   });
 }

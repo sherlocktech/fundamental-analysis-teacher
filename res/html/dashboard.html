@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+    content must come *after* these tags -->
+
+    <title>FAT - Fundamental Analysis Teacher</title>
+
+    <!-- **********CSS links********** -->
+    <!-- Bootstrap -->
+    <link href="..\..\bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+    <!-- c3 -->
+    <link href="../../bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+    <!-- My Stylesheet -->
+    <link href="..\css\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container center-align-text">
+
+      <div class="row top-buffer-1" id="search">
+        <div class="col-md-4 col-md-offset-4 form-group">
+          <div class="input-group">
+            <input type="search" class="form-control" id="company-search" placeholder="Ex: AAPL for Apple, Inc."></input>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row top-buffer" id="results">
+        <div class="col-md-4 stock_history">
+          <div></div>
+          <div class="caption">
+            <h3>Stock History</h3>
+            <p>This is chart with the stock's history</p>
+          </div>
+        </div>
+        <div class="col-md-4 stock_price">
+          <div></div>
+          <div class="caption">
+            <h3>Stock Price</h3>
+            <p>This is the stock's price information</p>
+          </div>
+        </div>
+        <div class="col-md-4 stock_fundamentals">
+          <div></div>
+          <div class="caption">
+            <h3>Company Fundamentals</h3>
+            <p>This is the company's fundamental information</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- **********Scripts********** -->
+    <div id="scripts">
+      <!-- jQuery -->
+      <script src="..\..\bower_components\jquery\dist\jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="..\..\bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+      <!-- d3 & c3 -->
+      <script src="..\..\bower_components\d3\d3.min.js" charset="utf-8"></script>
+      <script src="..\..\bower_components\c3\c3.min.js"></script>
+      <!-- My Scripts -->
+      <script src="..\js\stock_history.js"></script>
+      <script src="..\js\stock_price.js"></script>
+      <script src="..\js\stock_fundamentals.js"></script>
+      <script src="../js/buildDashboard.js"></script>
+      <script src="..\..\app.js"></script>
+    </div>
+  </body>
+</html>
