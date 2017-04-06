@@ -4,6 +4,13 @@
 </p>
 <div>
   <label>Search for a company to get started</label>
-  <input [(ngModel)]="company.name" placeholder="Ex: AAPL for Apple, Inc."/>
-  <button (click)="search(company)">Go!</button>
+  <input [(ngModel)]="search" placeholder="Ex: AAPL for Apple, Inc."/>
+  <button (click)="getCompany(search)">Go!</button>
+</div>
+<div *ngIf="company">
+  <h2>{{company.name}}</h2>
+  <h4>Ticker</h4>
+  <p>{{company.ticker}}</p>
+  <h4>Price</h4>
+  <p>{{company.stock.currentPrice}}</p>
 </div>

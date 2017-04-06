@@ -11,11 +11,13 @@ import { CompanyService } from './company.service';
 })
 export class DashboardComponent {
   title = 'Dashboard';
-  company: Company;
+  search: string;
+  company: Company = null;
 
   constructor(private companyService: CompanyService) { }
 
   getCompany(companyName: string): void {
-    this.company = this.companyService.getCompany(companyName);
+    this.companyService.getCompany(companyName)
+      .then(company => this.company = company);
   }
 }
